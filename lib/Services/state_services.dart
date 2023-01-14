@@ -14,4 +14,16 @@ class StateServices {
       return throw Exception('error');
     }
   }
+
+  Future<List<dynamic>> countriesListApi() async {
+    // ignore: prefer_typing_uninitialized_variables
+    var data;
+    final response = await http.get(Uri.parse(AppUrl.countriesList));
+    if (response.statusCode == 200) {
+      data = jsonDecode(response.body);
+      return data;
+    } else {
+      return throw Exception('error');
+    }
+  }
 }

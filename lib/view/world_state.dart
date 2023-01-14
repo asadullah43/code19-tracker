@@ -119,7 +119,8 @@ class _WorldStateScreenState extends State<WorldStateScreen>
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => CountriesList()));
+                                    builder: (context) =>
+                                        const CountriesList()));
                           },
                           child: Container(
                             height: 50,
@@ -143,6 +144,7 @@ class _WorldStateScreenState extends State<WorldStateScreen>
   }
 }
 
+// ignore: must_be_immutable
 class ReusabaleRow extends StatelessWidget {
   String title, value;
   ReusabaleRow({Key? key, required this.title, required this.value})
