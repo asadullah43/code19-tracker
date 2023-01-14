@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:code19_tracker/view/world_state.dart';
+import 'package:code19_tracker/View/world_state.dart';
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 

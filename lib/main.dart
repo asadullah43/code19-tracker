@@ -1,4 +1,4 @@
-import 'package:code19_tracker/view/splash_screen.dart';
+import 'package:code19_tracker/View/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
