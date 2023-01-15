@@ -37,51 +37,62 @@ class _DetailsScreenState extends State<DetailsScreen> {
         centerTitle: true,
         title: Text(widget.name),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Stack(
-              alignment: Alignment.topCenter,
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 25,
+          left: 8,
+          right: 8,
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      top: MediaQuery.of(context).size.height * .067),
-                  child: Card(
-                    child: Column(
-                      children: [
-                        SizedBox(
-                            height: MediaQuery.of(context).size.height * .06),
-                        ReusabaleRow(
-                            title: 'Cases',
-                            value: widget.totalCases.toString()),
-                        ReusabaleRow(
-                            title: 'Deaths',
-                            value: widget.totalDeaths.toString()),
-                        ReusabaleRow(
-                            title: 'Recovered',
-                            value: widget.totalRecoverd.toString()),
-                        ReusabaleRow(
-                            title: 'Active', value: widget.active.toString()),
-                        ReusabaleRow(
-                            title: 'Critical',
-                            value: widget.critical.toString()),
-                        ReusabaleRow(
-                            title: 'Tests', value: widget.test.toString()),
-                        ReusabaleRow(
-                            title: 'Today Recovered',
-                            value: widget.todayRecovered.toString()),
-                      ],
+                Stack(
+                  alignment: Alignment.topCenter,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(
+                          top: MediaQuery.of(context).size.height * .067),
+                      child: Card(
+                        child: Column(
+                          children: [
+                            SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height * .006),
+                            ReusabaleRow(
+                                title: 'Total Cases',
+                                value: widget.totalCases.toString()),
+                            ReusabaleRow(
+                                title: 'Deaths',
+                                value: widget.totalDeaths.toString()),
+                            ReusabaleRow(
+                                title: 'Recovered',
+                                value: widget.totalRecoverd.toString()),
+                            ReusabaleRow(
+                                title: 'Active',
+                                value: widget.active.toString()),
+                            ReusabaleRow(
+                                title: 'Critical',
+                                value: widget.critical.toString()),
+                            ReusabaleRow(
+                                title: 'Tests', value: widget.test.toString()),
+                            ReusabaleRow(
+                                title: 'Today Recovered',
+                                value: widget.todayRecovered.toString()),
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
-                ),
-                CircleAvatar(
-                  radius: 50,
-                  backgroundImage: NetworkImage(widget.image.toString()),
-                ),
-              ],
-            )
-          ]),
+                    CircleAvatar(
+                      radius: 50,
+                      backgroundImage: NetworkImage(widget.image.toString()),
+                    ),
+                  ],
+                )
+              ]),
+        ),
+      ),
     );
   }
 }
